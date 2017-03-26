@@ -1,0 +1,49 @@
+You are required to write a Java program for the purposes of encryption.
+A Command line interface is required which will allow an operator to type in some plaintext,
+and it will generate ciphertext and print it to console.
+The encryption to use is the Caesar cipher, with a rightshift of 1
+The range of characters is 32 to 126 inclusive.
+The program should be robust and recover from all reasonable exceptions and errors.
+
+Note: There may be changes to requirements.
+
+12:15pm - demo time
+
+
+
+Pseudocode of EncryptionApp
+
+Declare variable of type integer shiftCounter to store shift value
+Declare scanner object
+Declare String userInput and store next line from scan in it
+Declare userChars char[] and store userInput string in it
+
+FOR every char in userChars
+	IF char >= 32 and char <= 126
+		IF char == 126, make it 32
+	ELSE ++char
+END FOR
+
+Print the result to the user
+	
+Suspect changes in requirements:
+	prompt user to choose which way to shift r/l?, store result in boolean
+	prompt user to how far does he wants to shift, store it in int
+	depending on where to shift, call different methods passing
+	character and shiftcounter, which will return shifted result
+	
+	
+New Requirements:
+1) The program should en/de-crypt Unicode decimal values 32 - 126 inclusive.
+
+2) The user should be able to specify the shift direction and magnitude
+
+3) Decryption is also required
+
+4) Strings of length up to 140 characters must be catered for, >140 characters is optional
+	
+
+One method to shift every character to given magnitude both right and left
+
+FOR every character in text
+	DO increment(/decrement) of that character number of times user passed in
